@@ -1,0 +1,14 @@
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/Tenda.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/Provincia.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/Cliente.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/EmpleadoDAO.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/Dao.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/TendaDAO.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/Conexion.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/ProductoDAO.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/ProvinciaDAO.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/Producto.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/ClienteDAO.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/Empleado.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/DBDAOImpl.java
+/home/manu/NetBeansProjects/tarefa3_acceso_datos/src/main/java/gal/san/clemente/tarefa3_acceso_datos/model/dao/ClienteDBDAOImpl.java
