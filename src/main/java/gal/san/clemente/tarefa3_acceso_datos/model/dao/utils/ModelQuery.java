@@ -43,5 +43,6 @@ public class ModelQuery {
     public static final String DELETE_TENDA_EMPLEADO = "DELETE FROM tendas_empregados WHERE id = ?";
     public static final String GET_ALL_TENDA_EMPLEADO = "SELECT id, tenda, empregado, numero_horas_semana FROM tendas_empregados";
     public static final String GET_ONE_TENDA_EMPLEADO = "SELECT id, tenda, empregado, numero_horas_semana FROM tendas_empregados WHERE id = ?";
+    public static final String GET_ALL_TENDA_EMPREGADO_POR_TENDA = "SELECT id, tenda, empregado, numero_horas_semana FROM tendas_empregados where tenda = ?";
     
 }

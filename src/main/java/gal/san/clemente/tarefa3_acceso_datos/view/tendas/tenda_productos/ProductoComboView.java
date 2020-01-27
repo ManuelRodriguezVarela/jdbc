@@ -1,4 +1,4 @@
-package gal.san.clemente.tarefa3_acceso_datos.view.tendas;
+package gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos;
 
 import gal.san.clemente.tarefa3_acceso_datos.model.Producto;
 import java.util.Objects;

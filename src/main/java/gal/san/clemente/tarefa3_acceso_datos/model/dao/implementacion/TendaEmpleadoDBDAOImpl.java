@@ -2,6 +2,7 @@ package gal.san.clemente.tarefa3_acceso_datos.model.dao.implementacion;
 
 import gal.san.clemente.tarefa3_acceso_datos.exception.ModelException;
 import gal.san.clemente.tarefa3_acceso_datos.model.TendaEmpleado;
+import gal.san.clemente.tarefa3_acceso_datos.model.TendaProducto;
 import gal.san.clemente.tarefa3_acceso_datos.model.dao.ITendaEmpleadoDAO;
 import gal.san.clemente.tarefa3_acceso_datos.model.dao.utils.ModelError;
 import gal.san.clemente.tarefa3_acceso_datos.model.dao.utils.ModelQuery;
@@ -122,6 +123,30 @@ public class TendaEmpleadoDBDAOImpl extends DAOImpl implements ITendaEmpleadoDAO
         }
         
         return tendaEmpleado;
+    }
+    
+    @Override
+    public List<TendaEmpleado> obtenerTodos(Long tendaId) throws ModelException {
+        PreparedStatement stmt =  null;
+        ResultSet rs = null;
+        List<TendaEmpleado> empregadosTenda = new ArrayList<>();
+        
+        try {
+            stmt = conexion.prepareStatement(ModelQuery.GET_ALL_TENDA_EMPREGADO_POR_TENDA);
+            stmt.setLong(1, tendaId);
+            rs = stmt.executeQuery();
+            while(rs.next()) {
+                empregadosTenda.add((TendaEmpleado) converterTendaEmpleado.BaseDataToEntity(rs));
+            }
+            
+        } catch(SQLException ex) {
+            throw new ModelException(ModelError.ERROR_GET_ALL_TENDA_EMPLEADO, ex);
+        } finally {
+            closeResultSet(rs);
+            closePrepareStatement(stmt);
+        }
+        
+        return empregadosTenda;
     }
     
     private void setStmt(PreparedStatement stmt, TendaEmpleado tendaEmpleado) throws SQLException {

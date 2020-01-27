@@ -1,5 +1,6 @@
 package gal.san.clemente.tarefa3_acceso_datos.view.tendas;
 
+import gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos.ListTendasProductosFrame;
 import gal.san.clemente.tarefa3_acceso_datos.exception.ModelException;
 import gal.san.clemente.tarefa3_acceso_datos.model.Tenda;
 import gal.san.clemente.tarefa3_acceso_datos.model.dao.IDAOManager;
@@ -8,6 +9,7 @@ import gal.san.clemente.tarefa3_acceso_datos.view.MainMenu;
 import gal.san.clemente.tarefa3_acceso_datos.view.converter.ProvinciasComboModel;
 import gal.san.clemente.tarefa3_acceso_datos.view.converter.TendaTableModel;
 import gal.san.clemente.tarefa3_acceso_datos.view.empleados.ListEmpleadosFrame;
+import gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_empregados.ListTendasEmpleadosFrame;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -114,6 +116,11 @@ public class ListTendasFrame extends javax.swing.JFrame {
         gestionEmpleados.setFocusable(false);
         gestionEmpleados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         gestionEmpleados.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        gestionEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gestionEmpleadosActionPerformed(evt);
+            }
+        });
         menuTendas.add(gestionEmpleados);
 
         gestionProdutos.setText("Gestión Produtos Tenda");
@@ -248,7 +255,7 @@ public class ListTendasFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEliminarTendaActionPerformed
 
     private void gestionProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionProdutosActionPerformed
-         try {
+        try {
             Tenda tenda = getTendaSeleccionado();
             ListTendasProductosFrame listaTendaProductos = new ListTendasProductosFrame(manager, tenda);
             listaTendaProductos.setLocationRelativeTo(this);
@@ -259,6 +266,19 @@ public class ListTendasFrame extends javax.swing.JFrame {
             Logger.getLogger(ListTendasFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_gestionProdutosActionPerformed
+
+    private void gestionEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionEmpleadosActionPerformed
+        try {
+            Tenda tenda = getTendaSeleccionado();
+            ListTendasEmpleadosFrame listaTendaEmpleados = new ListTendasEmpleadosFrame(manager, tenda);
+            listaTendaEmpleados.setLocationRelativeTo(this);
+            listaTendaEmpleados.setVisible(true);
+        } catch (ModelException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ListTendasFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_gestionEmpleadosActionPerformed
     
     private void clean() {
         detalle.setTenda(null);

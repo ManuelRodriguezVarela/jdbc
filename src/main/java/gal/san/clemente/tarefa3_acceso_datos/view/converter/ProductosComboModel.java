@@ -3,7 +3,7 @@ package gal.san.clemente.tarefa3_acceso_datos.view.converter;
 import gal.san.clemente.tarefa3_acceso_datos.exception.ModelException;
 import gal.san.clemente.tarefa3_acceso_datos.model.Producto;
 import gal.san.clemente.tarefa3_acceso_datos.model.dao.IProductoDAO;
-import gal.san.clemente.tarefa3_acceso_datos.view.tendas.ProductoComboView;
+import gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos.ProductoComboView;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;

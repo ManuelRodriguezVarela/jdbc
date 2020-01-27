@@ -1,4 +1,4 @@
-package gal.san.clemente.tarefa3_acceso_datos.view.tendas;
+package gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos;
 
 import gal.san.clemente.tarefa3_acceso_datos.exception.ModelException;
 import gal.san.clemente.tarefa3_acceso_datos.model.Tenda;
@@ -15,11 +15,14 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
     
     private IDAOManager manager;
     
+    private Tenda tenda;
+    
     private TendaProductoTableModel model;
     
     public ListTendasProductosFrame(IDAOManager manager, Tenda tenda) throws ModelException, SQLException {
         initComponents();
         this.manager = manager;
+        this.tenda = tenda;
         this.model = new TendaProductoTableModel(manager.getTendaProductoDAO(), tenda);
         obtenerDatos();
         this.tablaTendaProductos.setModel(model);
@@ -36,8 +39,10 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
     
     final void obtenerDatos() throws ModelException {
         registrosTendas.setText("Actualizando datos ...");
+        detalle.loadData(tenda);
         model.updateModelTenda();
         registrosTendas.setText(model.getRowCount() + " registros productos de tenda");
+        datosTenda.setText("Tenda: " + tenda.getNome() + ", Provincia: " + tenda.getProvincia() + ", Cidade: " + tenda.getCidade());
     }
 
     @SuppressWarnings("unchecked")
@@ -56,7 +61,8 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaTendaProductos = new javax.swing.JTable();
         registrosTendas = new javax.swing.JLabel();
-        detalle = new gal.san.clemente.tarefa3_acceso_datos.view.tendas.DetalleTendaProductoPanel();
+        detalle = new gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos.DetalleTendaProductoPanel();
+        datosTenda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gestión Tendas");
@@ -148,6 +154,11 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
         jPanel1.add(registrosTendas, java.awt.BorderLayout.PAGE_END);
         jPanel1.add(detalle, java.awt.BorderLayout.LINE_END);
 
+        datosTenda.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        datosTenda.setText("Tenda: ");
+        datosTenda.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        jPanel1.add(datosTenda, java.awt.BorderLayout.PAGE_START);
+
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
@@ -163,8 +174,9 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
         try {
             TendaProducto tendaProducto = getTendaProductoSeleccionado();
             detalle.setTendaProducto(tendaProducto);
+            detalle.setTenda(tenda);
             detalle.setEditable(true);
-            detalle.loadData();
+            detalle.loadData(tenda);
             botonGuardar.setEnabled(true);
             botonCancelar.setEnabled(true);
         } catch (ModelException ex) {
@@ -178,7 +190,7 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
 
     private void botonCrearProdutoTendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearProdutoTendaActionPerformed
         detalle.setTendaProducto(null);
-        detalle.loadData();
+        detalle.loadData(tenda);
         detalle.setEditable(true);
         botonGuardar.setEnabled(true);
         botonCancelar.setEnabled(true);
@@ -203,8 +215,8 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     private void botonEliminarProductoTendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarProductoTendaActionPerformed
-        if(JOptionPane.showConfirmDialog(rootPane, "Seguro que queres borralo tenda?", 
-                "Borrar Tenda", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+        if(JOptionPane.showConfirmDialog(rootPane, "Seguro que queres borralo producto da tenda?", 
+                "Borrar producto da tenda", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
             try {
                 TendaProducto tendaProducto = getTendaProductoSeleccionado();
                 manager.getTendaProductoDAO().eliminar(tendaProducto);
@@ -221,7 +233,7 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
     private void clean() {
         detalle.setTendaProducto(null);
         detalle.setEditable(false);
-        detalle.loadData();
+        detalle.loadData(tenda);
         tablaTendaProductos.clearSelection();
         botonGuardar.setEnabled(false);
         botonCancelar.setEnabled(false);
@@ -233,7 +245,8 @@ public class ListTendasProductosFrame extends javax.swing.JFrame {
     private javax.swing.JButton botonEditarProductoTenda;
     private javax.swing.JButton botonEliminarProductoTenda;
     private javax.swing.JButton botonGuardar;
-    private gal.san.clemente.tarefa3_acceso_datos.view.tendas.DetalleTendaProductoPanel detalle;
+    private javax.swing.JLabel datosTenda;
+    private gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos.DetalleTendaProductoPanel detalle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;

@@ -36,70 +36,44 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="botonCrearTenda">
+        <Component class="javax.swing.JButton" name="botonCrearProdutoTenda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Crear Tenda"/>
+            <Property name="text" type="java.lang.String" value="Alta Producto Tenda"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrearTendaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrearProdutoTendaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JButton" name="botonEditarTenda">
+        <Component class="javax.swing.JButton" name="botonEditarProductoTenda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Editar Tenda"/>
+            <Property name="text" type="java.lang.String" value="Editar Producto Tenda"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEditarTendaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEditarProductoTendaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="botonEliminarTenda">
+        <Component class="javax.swing.JButton" name="botonEliminarProductoTenda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Borrar Tenda"/>
+            <Property name="text" type="java.lang.String" value="Borrar Producto Tenda"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarTendaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarProductoTendaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator2">
-        </Component>
-        <Component class="javax.swing.JButton" name="gestionEmpleados">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n Empleados Tenda"/>
-            <Property name="enabled" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionEmpleadosActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="gestionProdutos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n Produtos Tenda"/>
-            <Property name="enabled" type="boolean" value="false"/>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionProdutosActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator3">
         </Component>
         <Component class="javax.swing.JButton" name="botonGuardar">
           <Properties>
@@ -148,7 +122,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tablaTendas">
+            <Component class="javax.swing.JTable" name="tablaTendaProductos">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -177,10 +151,28 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="gal.san.clemente.tarefa3_acceso_datos.view.tendas.DetalleTendaPanel" name="detalle">
+        <Component class="gal.san.clemente.tarefa3_acceso_datos.view.tendas.tenda_productos.DetalleTendaProductoPanel" name="detalle">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
               <BorderConstraints direction="After"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="datosTenda">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tenda: "/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="4" left="4" right="4" top="4"/>
+              </Border>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="First"/>
             </Constraint>
           </Constraints>
         </Component>

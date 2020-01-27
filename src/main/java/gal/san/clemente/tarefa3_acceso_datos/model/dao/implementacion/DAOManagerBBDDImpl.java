@@ -90,7 +90,7 @@ public class DAOManagerBBDDImpl implements IDAOManager {
     public ITendaEmpleadoDAO getTendaEmpleadoDAO() {
         if(tendaEmpleadoDAO == null) {
             IConverter tendaEmpleadoConverter = new TendaEmpleadoConverterToBBDDImpl();
-            tendaProductoDAO = new TendaProductoDBDAOImpl(conexion, tendaEmpleadoConverter);
+            tendaEmpleadoDAO = new TendaEmpleadoDBDAOImpl(conexion, tendaEmpleadoConverter);
         }
         return tendaEmpleadoDAO;
     } 

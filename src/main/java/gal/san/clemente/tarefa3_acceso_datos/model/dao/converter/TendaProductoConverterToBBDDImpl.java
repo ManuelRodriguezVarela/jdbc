@@ -13,7 +13,7 @@ public class TendaProductoConverterToBBDDImpl implements IConverter<TendaProduct
         TendaProducto tendaProducto = null;
         try {
             Long idTenda = rs.getLong("tenda");
-            Long idProducto = rs.getLong("empregado");
+            Long idProducto = rs.getLong("producto");
             Integer stock = rs.getInt("stock");
             tendaProducto = new TendaProducto(idTenda, idProducto, stock);
             tendaProducto.setId(rs.getLong("id"));

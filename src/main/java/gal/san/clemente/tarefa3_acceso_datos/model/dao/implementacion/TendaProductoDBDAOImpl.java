@@ -99,7 +99,7 @@ public class TendaProductoDBDAOImpl extends DAOImpl implements ITendaProductoDAO
         return productosTenda;
     }
     
-     @Override
+    @Override
     public List<TendaProducto> obtenerTodos(Long tendaId) throws ModelException {
         PreparedStatement stmt =  null;
         ResultSet rs = null;
